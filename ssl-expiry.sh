@@ -10,7 +10,6 @@ EMAILMESSAGE="/tmp/emailcertificates.txt"
 CERTFILE=$1
 
 
-CERTIFICATE=$1
         cert_expiry_date=$(echo "$openssl_output" \
          | openssl x509 -noout -in $CERTFILE -enddate \
          | awk -F= ' /notAfter/ { printf("%s\n",$NF); } ');
